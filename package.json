@@ -1,6 +1,6 @@
 {
   "name": "working-time-calculator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Calculate working time between 2 dates given various exceptions",
   "main": "index.js",
   "scripts": {
