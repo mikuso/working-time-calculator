@@ -51,8 +51,8 @@ class WorkingTimeCalculator extends EventEmitter {
     }
 
     excludeBetween(date1, date2, reason = 'Custom Exclusion') {
-        date1 = (date1 instanceof Date) ? DateTime.fromJSDate(date1) : DateTime.fromISO(date1);
-        date2 = (date2 instanceof Date) ? DateTime.fromJSDate(date2) : DateTime.fromISO(date2);
+        date1 = (date1 instanceof Date) ? DateTime.fromJSDate(date1) : DateTime.fromISO(date1, {setZone: true});
+        date2 = (date2 instanceof Date) ? DateTime.fromJSDate(date2) : DateTime.fromISO(date2, {setZone: true});
         this._customExclusions.push({start: date1, end: date2, reason});
     }
 
@@ -135,8 +135,8 @@ class WorkingTimeCalculator extends EventEmitter {
     }
 
     calcDurationBetween(date1, date2) {
-        date1 = (date1 instanceof Date) ? DateTime.fromJSDate(date1) : DateTime.fromISO(date1);
-        date2 = (date2 instanceof Date) ? DateTime.fromJSDate(date2) : DateTime.fromISO(date2);
+        date1 = (date1 instanceof Date) ? DateTime.fromJSDate(date1) : DateTime.fromISO(date1, {setZone: true});
+        date2 = (date2 instanceof Date) ? DateTime.fromJSDate(date2) : DateTime.fromISO(date2, {setZone: true});
 
         const startDate = date1 > date2 ? date2 : date1;
         const endDate = date1 > date2 ? date1 : date2;
