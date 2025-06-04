@@ -67,7 +67,7 @@ class WorkingTimeCalculator extends EventEmitter {
         if (Number.isNaN(seconds)) {
             seconds = 0;
         }
-        return {hour, minute, seconds};
+        return {hour, minute, seconds, milliseconds: 0};
     }
 
     _getExclusionMarkers(start, end) {
